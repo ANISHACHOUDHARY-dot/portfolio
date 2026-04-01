@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;600&amp;family=Space+Grotesk:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="hamburger.css">
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#ffffff",
+            "on-tertiary-fixed": "#1a1c1c",
+            "surface-tint": "#00dce5",
+            "on-primary": "#003739",
+            "on-primary-container": "#008f95",
+            "surface-container-lowest": "#0e0e13",
+            "on-secondary-fixed": "#171e00",
+            "tertiary-container": "#161818",
+            "primary-fixed": "#63f7ff",
+            "on-tertiary-fixed-variant": "#454747",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e4e1e9",
+            "outline": "#909097",
+            "on-primary-fixed-variant": "#004f53",
+            "surface-bright": "#39383e",
+            "on-secondary-fixed-variant": "#3e4c00",
+            "surface-dim": "#131318",
+            "secondary-container": "#caf300",
+            "surface": "#131318",
+            "on-tertiary-container": "#808181",
+            "outline-variant": "#45464d",
+            "error": "#ffb4ab",
+            "tertiary-fixed": "#e2e2e2",
+            "inverse-on-surface": "#303036",
+            "secondary-fixed": "#caf300",
+            "inverse-primary": "#00696e",
+            "secondary-fixed-dim": "#b0d500",
+            "on-primary-fixed": "#002021",
+            "primary-container": "#001b1d",
+            "surface-container-highest": "#35343a",
+            "tertiary": "#c6c6c7",
+            "primary": "#00dce5",
+            "inverse-surface": "#e4e1e9",
+            "primary-fixed-dim": "#00dce5",
+            "on-secondary": "#2a3400",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "surface-container-high": "#2a292f",
+            "on-surface-variant": "#c6c6cd",
+            "on-tertiary": "#2f3131",
+            "error-container": "#93000a",
+            "on-error": "#690005",
+            "background": "#131318",
+            "on-background": "#e4e1e9",
+            "surface-container-low": "#1b1b20",
+            "on-secondary-container": "#596c00",
+            "surface-variant": "#35343a",
+            "surface-container": "#1f1f25"
+          },
+          fontFamily: {
+            "headline": ["Newsreader"],
+            "body": ["Inter"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+  <title>Technical Atelier — Anisha Choudhary</title>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+  <!-- Dock-Style NavBar -->
+  <nav class="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-2 px-8 py-3 bg-surface/60 dark:bg-[#131318]/60 backdrop-blur-2xl border border-outline-variant/20 rounded-full shadow-2xl dock-nav">
+    <a href="#hero" class="dock-nav-item font-label tracking-widest text-[11px] uppercase text-white/80 hover:text-white px-4 py-2 rounded-full transition-all duration-300" data-section="hero">Home</a>
+    <a href="#about" class="dock-nav-item font-label tracking-widest text-[11px] uppercase text-white/80 hover:text-white px-4 py-2 rounded-full transition-all duration-300" data-section="about">About</a>
+    <a href="#skills" class="dock-nav-item font-label tracking-widest text-[11px] uppercase text-white/80 hover:text-white px-4 py-2 rounded-full transition-all duration-300" data-section="skills">Skills</a>
+    <a href="#projects" class="dock-nav-item font-label tracking-widest text-[11px] uppercase text-white/80 hover:text-white px-4 py-2 rounded-full transition-all duration-300" data-section="projects">Projects</a>
+    <a href="#education" class="dock-nav-item font-label tracking-widest text-[11px] uppercase text-white/80 hover:text-white px-4 py-2 rounded-full transition-all duration-300" data-section="education">Education</a>
+    
+    <!-- Divider -->
+    <div class="h-6 w-px bg-outline-variant/30 mx-1"></div>
+    
+    <!-- Action Buttons -->
+    <a href="#contact" class="bg-primary text-on-primary px-4 py-2 font-label text-[10px] uppercase tracking-widest rounded-full hover:bg-primary-fixed transition-all active:scale-95 duration-200" role="button">
+      Contact me
+    </a>
+    <a href="media/Anisha%20Choudhary%20Resume%20%281%29.pdf" target="_blank" rel="noopener noreferrer" class="bg-secondary-fixed text-on-secondary-fixed px-4 py-2 font-label text-[10px] uppercase tracking-widest rounded-full hover:bg-primary-fixed transition-all active:scale-95 duration-200" role="button">
+      Resume
+    </a>
+  </nav>
+
+  <!-- Hamburger Button (Mobile Only) -->
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span class="middle-line"></span>
+  </button>
+
+  <!-- Mobile Menu (Mobile Only) -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero" class="mobile-menu-item" data-section="hero">Home</a>
+    <a href="#about" class="mobile-menu-item" data-section="about">About</a>
+    <a href="#skills" class="mobile-menu-item" data-section="skills">Skills</a>
+    <a href="#projects" class="mobile-menu-item" data-section="projects">Projects</a>
+    <a href="#education" class="mobile-menu-item" data-section="education">Education</a>
+    <div class="mobile-menu-buttons">
+      <a href="#contact" class="mobile-menu-btn contact">Contact me</a>
+      <a href="media/Anisha%20Choudhary%20Resume%20%281%29.pdf" target="_blank" rel="noopener noreferrer" class="mobile-menu-btn resume">Resume</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-32 pb-32 px-8 overflow-hidden">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+        <div class="md:col-span-8">
+          <p class="font-label text-primary tracking-[0.3em] uppercase text-sm mb-6">computer science student & aspiring developer</p>
+          <h1 class="font-headline text-7xl md:text-[9rem] leading-[0.9] font-extrabold tracking-tighter text-secondary mix-blend-difference mb-8">
+            Anisha <br/> <span class="italic font-light ml-4 md:ml-16">Choudhary</span>
+          </h1>
+          <div class="flex items-center gap-4 group cursor-pointer w-fit mt-12">
+            <div class="h-[1px] w-12 bg-secondary-fixed transition-all group-hover:w-20"></div>
+            <span class="font-label text-secondary-fixed uppercase text-[11px] tracking-widest">Architect of Experiences</span>
+          </div>
+        </div>
+        <div class="md:col-span-4 relative mt-12 md:mt-0">
+          <div id="hero-container" class="bg-surface-container-high aspect-[3/4] overflow-hidden relative">
+            <!-- Local portrait image from media folder (spaces URL-encoded) -->
+            <img id="hero-img" alt="Portrait — Anisha Choudhary" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" src="media/resume pic.jpeg"/>
+          </div>
+          <div class="absolute -bottom-8 -left-8 w-32 h-32 border-l border-b border-primary/30 p-4">
+            <p class="font-label text-[8px] text-primary/50 leading-tight">ATELIER_REF: 2024_ANSH<br/>COORD: 28.6139° N</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 pointer-events-none opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(#ffffff 0.5px, transparent 0.5px); background-size: 30px 30px;"></div>
+      </div>
+    </section>
+
+  <!-- About My Craft & Connect -->
+  <section id="about" class="py-32 px-8 bg-surface-container-lowest border-t border-outline-variant/10">
+      <div class="container mx-auto grid md:grid-cols-12 gap-16">
+        <div class="md:col-span-7 space-y-12">
+          <div class="flex flex-col gap-4">
+            <span class="font-label text-primary text-[10px] tracking-widest uppercase">Overview // 01</span>
+            <h2 class="font-headline text-6xl md:text-7xl italic text-secondary">About Me</h2>
+          </div>
+          <div class="space-y-8 font-body text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+            <p>Hi, I’m a tech enthusiast who loves blending creativity with code. I’m also a Core Team Member at the GeeksforGeeks Student Chapter at DYPIU, where I engage in organizing events and helping build a strong tech community. From designing websites to experimenting with AI tools and visual content, I enjoy creating things that are both functional and visually appealing. I’m always curious to learn and grow.</p>
+          </div>
+          <!-- stats removed as requested -->
+        </div>
+        <div class="md:col-span-5">
+          <div class="bg-surface p-10 border border-outline-variant/20 relative">
+            <h3 class="font-headline text-4xl italic text-secondary mb-8">Contact</h3>
+            <div class="space-y-6 mb-10">
+              <div class="flex items-center gap-4 text-on-surface-variant">
+                <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                <a class="font-label text-xs tracking-wider text-on-surface-variant hover:text-primary" href="mailto:anisha5.choudhary@gmail.com">anisha5.choudhary@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-4 text-on-surface-variant">
+                <span class="material-symbols-outlined text-primary text-xl">linkedin</span>
+                <a class="font-label text-xs tracking-wider uppercase text-on-surface-variant hover:text-primary" href="https://www.linkedin.com/in/anisha-choudhary-8b8045396/?skipRedirect=true" target="_blank" rel="noopener noreferrer">LinkedIn /anisha-choudhary-8b8045396</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Core Competencies -->
+  <section id="skills" class="py-32 px-8 bg-surface">
+      <div class="container mx-auto">
+        <div class="mb-20 text-center max-w-2xl mx-auto">
+          <span class="font-label text-primary text-[10px] tracking-widest uppercase block mb-4">Skills // 02</span>
+          <h2 class="font-headline text-5xl md:text-6xl italic text-secondary mb-6 section-underline">Skills</h2>
+        </div>
+
+  <div class="grid md:grid-cols-4 gap-6">
+          <!-- Row 1: A B C D -->
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c1 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-primary mb-8">code</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Languages</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">Java (OOP)</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">Python</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c2 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-8">language</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Web</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">HTML</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">CSS</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">JavaScript</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c3 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-primary mb-8">storage</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Database</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">SQL</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c4 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-8">school</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Core Subjects</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">Data Structures</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">Operating Systems</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">Computer Networks</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Row 2: C D A B (ensures adjacent colors differ) -->
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c3 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-primary mb-8">extension</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Libraries &amp; Tools</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">NumPy</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">pandas</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">matplotlib</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">Git</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">GitHub</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c4 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-8">auto_awesome</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Framework</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">React (learning)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c1 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-primary mb-8">brush</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Design</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-primary">Canva</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-surface p-10 group hover:bg-surface-container transition-colors duration-500 border-2 border-c2 skills-card">
+            <div class="skill-content">
+              <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-8">psychology</span>
+              <h3 class="font-headline text-2xl italic text-secondary mb-6">Soft skills</h3>
+              <ul class="space-y-3">
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">Communication</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">Leadership</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">Creativity</li>
+                <li class="font-label text-[10px] text-on-surface-variant tracking-widest group-hover:text-secondary-fixed">Teamwork</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="py-32 px-8 bg-surface-container-low" id="projects">
+      <div class="container mx-auto">
+        <div class="flex flex-col mb-12">
+          <span class="font-label text-primary text-[10px] tracking-widest uppercase mb-4">Projects // 03</span>
+          <h2 class="font-headline text-6xl md:text-7xl italic text-secondary mb-6 section-underline">Projects</h2>
+        </div>
+
+        <div class="projects-grid grid md:grid-cols-2 gap-8">
+          <!-- Sysptopsy -->
+          <article class="project-card bg-surface p-6 rounded-lg border border-outline-variant/10 transform transition-all duration-500" tabindex="0">
+            <div class="project-thumb mb-4 overflow-hidden rounded-md bg-[#0f1112] flex items-center justify-center">
+              <span class="material-symbols-outlined text-6xl text-primary">settings_suggest</span>
+            </div>
+            <div class="project-body flex-1">
+              <h3 class="font-headline text-2xl italic text-secondary mb-3">Sysptopsy</h3>
+              <p class="font-body text-on-surface-variant text-sm leading-relaxed mb-4">A system-focused project that demonstrates understanding of core technical concepts, problem-solving, and structured development. Highlights ability to design, analyze, and implement efficient solutions.</p>
+              <ul class="font-label text-[10px] text-on-surface-variant space-y-2 mb-4">
+                <li>• Clean and modular structure</li>
+                <li>• Focus on performance and optimization</li>
+                <li>• Practical implementation of technical concepts</li>
+              </ul>
+              <div class="flex items-center justify-end gap-4">
+                <a class="project-btn inline-flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded shadow hover:shadow-lg transition" href="https://sysautopsy.onrender.com/" target="_blank" rel="noopener noreferrer">View Project <span class="material-symbols-outlined">launch</span></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Documentary -->
+          <article class="project-card bg-surface p-6 rounded-lg border border-outline-variant/10 transform transition-all duration-500" tabindex="0">
+            <div class="project-thumb mb-4 overflow-hidden rounded-md bg-[#0f1112] flex items-center justify-center">
+              <span class="material-symbols-outlined text-6xl text-primary">movie</span>
+            </div>
+            <div class="project-body flex-1">
+              <h3 class="font-headline text-2xl italic text-secondary mb-3">Documentary</h3>
+              <p class="font-body text-on-surface-variant text-sm leading-relaxed mb-4">A creative project focused on storytelling, research, and presentation. Demonstrates ability to communicate ideas effectively through visual and narrative formats.</p>
+              <ul class="font-label text-[10px] text-on-surface-variant space-y-2 mb-4">
+                <li>• Strong storytelling and concept building</li>
+                <li>• Research-based content</li>
+                <li>• Engaging visual presentation</li>
+              </ul>
+              <div class="flex items-center justify-end gap-4">
+                <a class="project-btn inline-flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded shadow hover:shadow-lg transition" href="https://youtu.be/Uk69-zIGGuY?si=0FqxJPP9LgvcPhKV" target="_blank" rel="noopener noreferrer">Watch / Explore <span class="material-symbols-outlined">play_arrow</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-32 px-8 bg-surface">
+      <div class="container mx-auto">
+        <div class="mb-20">
+          <span class="font-label text-primary text-[10px] tracking-widest uppercase mb-4 block">Education // 04</span>
+          <h2 class="font-headline text-6xl md:text-7xl italic text-secondary">Education</h2>
+        </div>
+
+        <div class="space-y-8 font-body text-on-surface-variant text-lg leading-relaxed max-w-2xl">
+          <p>Btech in computerscience and engineering - DY Patil International University, Pune (2024-2028)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements & Activities -->
+    <section class="py-32 px-8 bg-surface-container-lowest">
+      <div class="container mx-auto">
+        <div class="mb-20">
+          <span class="font-label text-primary text-[10px] tracking-widest uppercase mb-4 block">Recognition // 05</span>
+          <h2 class="font-headline text-6xl md:text-7xl italic text-secondary">Achievements & Activities</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="bg-surface p-12 border border-outline-variant/10">
+            <h3 class="font-label text-[10px] uppercase tracking-[0.4em] text-primary mb-12">Achievements</h3>
+            <ul class="space-y-12">
+              <li class="flex gap-8">
+                <span class="material-symbols-outlined text-primary text-3xl">emoji_events</span>
+                <div>
+                  <h4 class="font-headline text-xl text-white italic">Winner – GDGCxDYPIU WowVerse 2026 Hackathon</h4>
+                  <p class="font-body text-sm text-on-surface-variant mt-2 leading-relaxed">First place winner in the hackathon competition.</p>
+                </div>
+              </li>
+              <li class="flex gap-8">
+                <span class="material-symbols-outlined text-primary text-3xl">check_circle</span>
+                <div>
+                  <h4 class="font-headline text-xl text-white italic">Inceptio 2025 – Qualified for second round</h4>
+                  <p class="font-body text-sm text-on-surface-variant mt-2 leading-relaxed">Advanced to the next phase of the competition.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-surface p-12 border border-outline-variant/10">
+            <h3 class="font-label text-[10px] uppercase tracking-[0.4em] text-secondary-fixed mb-12">Activities</h3>
+            <ul class="space-y-12">
+              <li class="flex gap-8">
+                <span class="material-symbols-outlined text-secondary-fixed text-3xl">group</span>
+                <div>
+                  <h4 class="font-headline text-xl text-white italic">Core Team Member (Management)</h4>
+                  <p class="font-body text-sm text-on-surface-variant mt-2 leading-relaxed">GeeksforGeeks Student Chapter, DYPIU</p>
+                </div>
+              </li>
+              <li class="flex gap-8">
+                <span class="material-symbols-outlined text-secondary-fixed text-3xl">mic</span>
+                <div>
+                  <h4 class="font-headline text-xl text-white italic">Anchor & Participant – FinBiz</h4>
+                  <p class="font-body text-sm text-on-surface-variant mt-2 leading-relaxed">32-hour business event</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Contact Section -->
+  <section id="contact" class="py-12 px-8 bg-[#001b1d] relative overflow-hidden">
+      <div class="container mx-auto text-center relative z-10">
+        <h2 class="font-headline text-6xl md:text-9xl italic text-secondary mb-6 leading-tight">Let's craft the <span class="text-primary">future</span>.</h2>
+        <form id="contact-form" class="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mt-8" aria-label="Project contact form">
+          <div class="relative group">
+            <label class="font-label text-[10px] uppercase text-primary/70 tracking-widest block mb-2">Full Name</label>
+            <input id="c-name" class="w-full bg-[#002a2d] border border-outline-variant/30 px-6 py-4 text-secondary font-body focus:border-primary focus:ring-0 outline-none transition-all" placeholder="Anisha Choudhary" type="text" required />
+          </div>
+          <div class="relative group">
+            <label class="font-label text-[10px] uppercase text-primary/70 tracking-widest block mb-2">Email Address</label>
+            <input id="c-email" class="w-full bg-[#002a2d] border border-outline-variant/30 px-6 py-4 text-secondary font-body focus:border-primary focus:ring-0 outline-none transition-all" placeholder="hello@anisha.tech" type="email" required />
+          </div>
+          <div class="md:col-span-2 relative group">
+            <label class="font-label text-[10px] uppercase text-primary/70 tracking-widest block mb-2">Project Details</label>
+            <textarea id="c-details" class="w-full bg-[#002a2d] border border-outline-variant/30 px-6 py-4 text-secondary font-body focus:border-primary focus:ring-0 outline-none transition-all resize-none" placeholder="Tell me about your vision..." rows="5" required></textarea>
+          </div>
+          <button class="md:col-span-2 bg-secondary-fixed text-on-secondary-fixed py-6 font-label text-sm uppercase tracking-[0.4em] hover:bg-primary transition-all active:scale-95 duration-300" type="submit">
+            Initiate Project Discovery
+          </button>
+        </form>
+      </div>
+      <!-- Abstract Bg Accents -->
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary-fixed/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-8 py-4 bg-[#0e0e13] dark:bg-[#0e0e13]">
+    <div class="flex justify-center items-center">
+      <div class="text-sm font-black text-white/40 uppercase tracking-tighter">ANISHA CHOUDHARY</div>
+    </div>
+  </footer>
+
+  <!-- Toast container and scripts -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="scripts.js" defer></script>
+</body>
+</html>

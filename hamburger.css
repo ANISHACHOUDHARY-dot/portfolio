@@ -1,0 +1,180 @@
+/* Hamburger Menu CSS */
+/* Mobile navigation menu styling */
+
+@media (max-width: 640px) {
+  /* Hide dock nav on mobile */
+  .dock-nav {
+    display: none;
+  }
+
+  /* Create hamburger button */
+  .nav-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 220, 229, 0.15);
+    border: 1px solid rgba(0, 220, 229, 0.3);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .nav-toggle:hover {
+    background: rgba(0, 220, 229, 0.25);
+    box-shadow: 0 0 15px rgba(0, 220, 229, 0.2);
+  }
+
+  .nav-toggle.active {
+    background: rgba(0, 220, 229, 0.3);
+  }
+
+  /* Hamburger lines */
+  .nav-toggle::before,
+  .nav-toggle::after {
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 2px;
+    background: #00dce5;
+    transition: all 0.3s ease;
+  }
+
+  .nav-toggle::before {
+    top: 0.6rem;
+  }
+
+  .nav-toggle::after {
+    bottom: 0.6rem;
+  }
+
+  .nav-toggle .middle-line {
+    width: 1.25rem;
+    height: 2px;
+    background: #00dce5;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  /* Hamburger animation when active */
+  .nav-toggle.active::before {
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -1px;
+  }
+
+  .nav-toggle.active::after {
+    transform: rotate(-45deg);
+    bottom: 50%;
+    margin-bottom: -1px;
+  }
+
+  .nav-toggle.active .middle-line {
+    opacity: 0;
+  }
+
+  /* Mobile menu overlay */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(19, 19, 24, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile menu items */
+  .mobile-menu-item {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .mobile-menu-item:hover,
+  .mobile-menu-item.active {
+    color: #00dce5;
+    transform: translateX(10px);
+  }
+
+  /* Mobile menu buttons */
+  .mobile-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 2rem;
+  }
+
+  .mobile-menu-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu-btn.contact {
+    background: #00dce5;
+    color: #002021;
+  }
+
+  .mobile-menu-btn.contact:active {
+    transform: scale(0.95);
+  }
+
+  .mobile-menu-btn.resume {
+    background: #caf300;
+    color: #2a3400;
+  }
+
+  .mobile-menu-btn.resume:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Hide hamburger on tablet and desktop */
+@media (min-width: 641px) {
+  .nav-toggle,
+  .mobile-menu {
+    display: none;
+  }
+
+  /* Show dock nav on tablet and desktop */
+  .dock-nav {
+    display: flex !important;
+  }
+}

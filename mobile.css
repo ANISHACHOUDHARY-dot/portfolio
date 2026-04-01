@@ -1,0 +1,211 @@
+/* Mobile-Specific CSS */
+/* Responsive design breakpoint at 768px (tablet and below) */
+
+/* Extra small devices (phones) */
+@media (max-width: 640px) {
+  /* Hide dock nav on mobile */
+  .dock-nav {
+    display: none !important;
+  }
+
+  /* Reduce hero section padding */
+  #hero {
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Reduce section padding on mobile */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Reduce project card padding */
+  .project-card {
+    padding: 1rem;
+  }
+
+  /* Footer - even smaller on mobile */
+  footer {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  footer .text-sm {
+    font-size: 0.625rem;
+  }
+
+  /* Reduce heading sizes on mobile */
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Reduce gaps in grid layouts */
+  .grid {
+    gap: 1rem;
+  }
+
+  /* Make buttons stack on mobile */
+  .flex-wrap {
+    flex-direction: column;
+  }
+
+  /* Reduce contact section padding */
+  .bg-surface {
+    padding: 1.5rem;
+  }
+
+  /* Reduce space between list items */
+  .space-y-12 {
+    --space-y: 0.75rem;
+  }
+
+  .space-y-8 {
+    --space-y: 0.5rem;
+  }
+
+  .space-y-6 {
+    --space-y: 0.5rem;
+  }
+
+  /* Adjust flex gaps on mobile */
+  .gap-12 {
+    gap: 0.5rem;
+  }
+
+  .gap-8 {
+    gap: 0.5rem;
+  }
+
+  .gap-16 {
+    gap: 0.75rem;
+  }
+}
+
+/* Tablet devices (768px and below but larger than phones) */
+@media (max-width: 768px) and (min-width: 641px) {
+  .dock-nav {
+    padding: 0.6rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .dock-nav-item {
+    padding: 0.35rem 0.75rem;
+    font-size: 9px;
+  }
+
+  /* Skill card content - smaller padding on tablet */
+  .skill-content {
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Section underline - smaller on tablet */
+  .section-underline::after {
+    width: 5rem;
+    height: 8px;
+  }
+
+  /* Project cards - smaller thumbnail height */
+  .project-thumb {
+    height: 120px;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+
+  /* Skills cards - remove aspect ratio on small screens */
+  .skills-card {
+    aspect-ratio: auto;
+  }
+
+  /* Disable group borders on small screens */
+  .skills-card:nth-child(-n+4) {
+    border: none;
+  }
+}
+
+/* General mobile optimizations for all mobile devices */
+@media (max-width: 768px) {
+  /* Skill card content - smaller padding on mobile */
+  .skill-content {
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Section underline - smaller on mobile */
+  .section-underline::after {
+    width: 5rem;
+    height: 8px;
+  }
+
+  /* Project cards - smaller thumbnail height */
+  .project-thumb {
+    height: 120px;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+
+  /* Skills cards - remove aspect ratio on small screens */
+  .skills-card {
+    aspect-ratio: auto;
+  }
+
+  /* Disable group borders on small screens */
+  .skills-card:nth-child(-n+4) {
+    border: none;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (max-width: 768px) {
+  #hero {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  .dock-nav {
+    top: 0.5rem;
+    padding: 0.4rem 0.5rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch target sizes */
+  .dock-nav-item,
+  .project-btn,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Remove hover effects on touch devices */
+  .dock-nav-item::before {
+    opacity: 0;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+
+  .project-btn:hover {
+    transform: none;
+  }
+}
